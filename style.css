@@ -1,0 +1,34 @@
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    color: #FFC4C4;
+    text-align: center;
+    background-color: #850E35;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#game button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #FCF5EE;
+    border: none;
+    border-radius: 8px;
+    background-color: #EE6983;
+    transition: background-color 0.3s;
+}
+
+#game button:hover {
+    background-color: #87BAC3;
+}
+
+#result {
+    margin-top: 30px;
+    font-size: 20px;
+}
