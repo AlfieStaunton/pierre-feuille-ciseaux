@@ -1,10 +1,11 @@
 let rounds = 0;
 let userScore = 0;
 let computerScore = 0;
+let userGuesses = [];
 
 function playGame(userChoice) {
 
-    if (rounds >= 3) {
+    if (rounds >= 5) {
         document.getElementById("winner").textContent =
             "Game over! Please refresh to play again.";
         return;
@@ -12,6 +13,8 @@ function playGame(userChoice) {
 
 const choices = ["rock", "paper", "scissors"];
 const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+userGuesses.push(userChoice);
 
 document.getElementById("user-choice").textContent = "You chose: " + userChoice;
 document.getElementById("computer-choice").textContent = "Computer chose: " + computerChoice;
@@ -59,18 +62,22 @@ if (userChoice === computerChoice) {
 
     document.getElementById("winner").textContent = winner;
 
-    if (rounds ===3) {
+
+    if (rounds === 5) {
         let finalMessage = `FINAL SCORE - You: ${userScore} | Computer ${computerScore}. `;
 
         if (userScore > computerScore) {
-            finalMessage += "You won the Game!";
+            finalMessage += "You won the Game!\n\n";
         }
         else if (computerScore > userScore) {
-            finalMessage += "You Lost the Game!";
+            finalMessage += "You Lost the Game\n\n!";
     }
     else {
-        finalMessage += "Its a draw!";
+        finalMessage += "Its a draw!\n\n";
     }
+
+    finalMessage +="Your guesses were:\n" + userGuesses.join(",");
+
      setTimeout (() => {
         alert(finalMessage);
      }, 200);
